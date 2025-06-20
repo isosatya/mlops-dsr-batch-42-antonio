@@ -16,9 +16,10 @@ COPY ./app /code/app
 # set the environment variables for wandb
 ENV WANDB_API_KEY=""
 ENV MODEL_PATH=""
-ENV PORT=8080
+# ENV PORT=8080
 
-EXPOSE ${PORT}
+EXPOSE 8080
 
 # fastapi run app/main.py --port 9090 --reload
-CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port $PORT"]
+# CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port $PORT"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
