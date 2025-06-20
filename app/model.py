@@ -12,7 +12,8 @@ MODELS_DIR="models"
 os.makedirs(MODELS_DIR, exist_ok=True)
 MODEL_FILE_NAME = "best_model.pth"
 
-load_env()
+# comment when doing the GCP deployment 
+# load_env()
 
 wandb_api_key = os.environ.get("WANDB_API_KEY")
 model_path = os.environ.get("MODEL_PATH")
